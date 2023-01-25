@@ -1,14 +1,23 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header';
-import Main from './components/main';
+import Header from './components/Header';
+import Main from './components/Main';
+
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+
+const theme = extendTheme({
+  sizes: {
+    headerHeight: '30px',
+    footerHeight: '60px',
+  }
+})
 
 function App() {
   return (
-    <div className="App">
+    <ChakraProvider theme={theme}>
       <Header />
       <Main />
-    </div>
+    </ChakraProvider>
   );
 }
 

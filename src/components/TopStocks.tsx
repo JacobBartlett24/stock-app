@@ -1,10 +1,11 @@
 import React from "react";
+import { Box, Card, CardBody, CardFooter, Stack, Text } from "@chakra-ui/react"
 
 const TopStocks = () => {
   return (
-    <div>
-      <h1>Top Stocks</h1>
-    </div>
+    <Box display='flex' justifyContent='center' alignItems='center' w='30vw' h='100%'>
+      <Card>Top Stocks</Card>
+    </Box>
   );
 }
 

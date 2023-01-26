@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardFooter, Stack, CardHeader, Text } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardFooter, Stack, CardHeader, Text, Heading } from "@chakra-ui/react";
 import React, { FC } from "react";
 
 interface StockProps {
@@ -6,6 +6,8 @@ interface StockProps {
 }
 
 const Stocks: FC<StockProps> = (props): JSX.Element => {
+
+  console.log(props.tickerData)
 
   return (
     <Box
@@ -18,10 +20,16 @@ const Stocks: FC<StockProps> = (props): JSX.Element => {
     >
       <Card w='100%' h='100%'>
         <CardHeader>
-          <Text>{props.tickerData.ticker}</Text>
+          <Heading>{props.tickerData.ticker}</Heading>
         </CardHeader>
         <CardBody>
           <Stack spacing={4}>
+            <Text>{props.tickerData.c}</Text>
+            <Text>{props.tickerData.h}</Text>
+            <Text>{props.tickerData.l}</Text>
+            <Text>{props.tickerData.o}</Text>
+            <Text>{props.tickerData.t}</Text>
+            <Text>{props.tickerData.v}</Text>
           </Stack>
         </CardBody>
         <CardFooter>

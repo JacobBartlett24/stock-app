@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import TopStocks from "./TopStocks";
 import Stocks from "./Stocks";
+import { ErrorBoundary } from "react-error-boundary";
 
 import { Box } from "@chakra-ui/react"
+import { DefaultStocks } from "./Stocks";
 
 const Main = () => {
 
@@ -18,7 +20,10 @@ const Main = () => {
       p={12}
     >
       <TopStocks getTickerData={setTickerData} />
-      <Stocks tickerData={tickerData} />
+      <ErrorBoundary fallback={<DefaultStocks tickerData={tickerData} />}>
+
+        <Stocks tickerData={tickerData} />
+      </ErrorBoundary>
     </Box>
   );
 }

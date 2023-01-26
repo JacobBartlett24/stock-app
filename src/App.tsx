@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ErrorBoundary } from 'react-error-boundary';
 
 const theme = extendTheme({
   sizes: {
@@ -16,7 +17,9 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Header />
-      <Main />
+
+        <Main />
+
     </ChakraProvider>
   );
 }

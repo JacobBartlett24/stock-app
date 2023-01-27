@@ -17,7 +17,6 @@ const SearchBar: FC<StockProps> = (props) => {
       );
       const data = await response.json();
       setResponseData(data);
-      console.error(data);
       props.getTicker(data);
     } catch (error) {
       console.log(error);

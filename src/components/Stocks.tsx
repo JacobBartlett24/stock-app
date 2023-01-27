@@ -5,6 +5,7 @@ import { typeOptions } from "@testing-library/user-event/dist/type/typeImplement
 
 interface StockProps {
   tickerData: any;
+  mediaQueries: string;
 }
 
 export const DefaultStocks: FC<StockProps> = (props): JSX.Element => {
@@ -14,7 +15,7 @@ export const DefaultStocks: FC<StockProps> = (props): JSX.Element => {
         display='flex'
         justifyContent='center'
         alignItems='center'
-        w='70vw'
+        w={props.mediaQueries}
         h='100%'
         p={6}
       >
@@ -42,7 +43,7 @@ const Stocks: FC<StockProps> = (props): JSX.Element => {
       display='flex'
       justifyContent='center'
       alignItems='center'
-      w='70vw'
+      w={props.mediaQueries}
       h='100%'
       p={6}
     >

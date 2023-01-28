@@ -23,11 +23,14 @@ const Main = () => {
       w={isSmallerThan1500 ? '100%' : '100%'}
     >
       {isSmallerThan1500 ? <TopStocks getTickerData={setTickerData} /> : <SearchBar getTicker={setTickerData} />}
-      <ErrorBoundary fallback={<DefaultStocks tickerData={tickerData} mediaQueries={isSmallerThan1500 ? '70vw' : '100%'} />}>
-        <Stocks tickerData={tickerData} mediaQueries={isSmallerThan1500 ? '70vw' : '100%'} />
-      </ErrorBoundary>
+      <Stocks tickerData={tickerData} mediaQueries={isSmallerThan1500 ? '70vw' : '100%'} />
     </Box >
   );
 }
+
+/*
+<ErrorBoundary fallback={<DefaultStocks tickerData={tickerData} mediaQueries={isSmallerThan1500 ? '70vw' : '100%'} />}>
+</ErrorBoundary>
+*/
 
 export default Main;

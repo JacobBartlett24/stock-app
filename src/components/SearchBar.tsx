@@ -13,11 +13,11 @@ const SearchBar: FC<StockProps> = (props) => {
   const stockRequest = async () => {
     try {
       const response = await fetch(
-        `https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/2023-01-09/2023-01-09?apiKey=${apiKey}`
+        `https://api.polygon.io/v2/reference/news?ticker=${ticker}&order=asc&limit=10&sort=published_utc&apiKey=${apiKey}`
       );
       const data = await response.json();
-      setResponseData(data);
-      props.getTicker(data);
+      setResponseData(data.results);
+      props.getTicker(data.results);
     } catch (error) {
       console.log(error);
     }
